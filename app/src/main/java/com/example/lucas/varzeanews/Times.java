@@ -1,18 +1,49 @@
 package com.example.lucas.varzeanews;
 
+import android.widget.ImageView;
+
 import java.util.List;
 
 public class Times {
 
-    private String nome;
-    private String escudo;
 
-    Times(String n,String e){
+    private int id;
+    private String nome;
+    private int escudo;
+    private int grupo;
+    private int pontos;
+
+    Times(int id, String n, int e, int grupo, int pontos){
+        this.id = id;
         this.escudo = e;
         this.nome = n;
+        this.grupo = grupo;
+        this.pontos = pontos;
     }
 
+    public int getId() {
+        return id;
+    }
 
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public int getGrupo() {
+        return grupo;
+    }
+
+    public void setGrupo(int grupo) {
+        this.grupo = grupo;
+    }
+
+    public int getPontos() {
+        return pontos;
+    }
+
+    public void setPontos(int pontos) {
+        this.pontos = pontos;
+    }
 
     public String getNome() {
         return nome;
@@ -22,16 +53,16 @@ public class Times {
         this.nome = nome;
     }
 
-    public String getEscudo() {
+    public int getEscudo() {
         return escudo;
     }
 
-    public void setEscudo(String escudo) {
+    public void setEscudo(int escudo) {
         this.escudo = escudo;
     }
 
     public String toString() {
-        return "Curso: " + nome + " Escudo: " +
-                escudo ;
+        if(id==-1) return  "       " +  nome;
+        else return  "   " +  nome+"    "+ pontos ;
     }
 }
